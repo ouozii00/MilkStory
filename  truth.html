@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module">
+  import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+
+  new fairyDustCursor();
+</script>
+  <title>우유의효능</title>
+</head>
+<style>
+  html, body {width: 100vw; height: 100vh; margin: 0; padding: 0;}
+    
+    html, body, *{cursor: url('image1.png') 16 16, auto ;}
+    html:active, body:active, *:active { cursor: url('2.png') 16 16, auto ;}
+    body {background-image: url('bg4.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;}
+    .blink-img:hover{animation:blink 0.2s steps(2,start) 3;}
+    @keyframes blink{to{visibility:hidden;}}
+    .milk-btn {position: absolute; left: 1530px; top: 880px; height: 50px;    transition: transform 0.1s;}
+    .milk-btn:hover {
+      transform: rotate(-12deg);}
+</style>
+<body>
+  <section>
+    <img src="b5.png" style="height: 60px; transform:translate(30px,30px)">
+  </section>
+  <section>
+    <a href="main.html" >
+       <img src="b1.png" alt="main" class="milk-btn">
+    </a>
+    </section>
+
+
+</body>
+</html>

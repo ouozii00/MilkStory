@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module">
+  import { rainbowCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+
+  new rainbowCursor();
+</script>
+  <title>우유의효능</title>
+</head>
+<style>
+   @import url("https://use.typekit.net/dmy2ond.css");
+   @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@100..900&display=swap');
+    .en-font {
+     font-family: "neue-haas-unica", sans-serif;font-weight: 400;font-style: italic;}
+    .kr-font {font-family: "Gothic A1", sans-serif;
+              font-weight: 400;
+              font-style: normal;}
+  html, body {width: 100vw; height: 100vh; margin: 0; padding: 0;}
+    
+    html, body, *{cursor: url('image1.png') 16 16, auto ;}
+    html:active, body:active, *:active { cursor: url('2.png') 16 16, auto ;}
+    body {background-image: url('bg4.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;}
+    .blink-img:hover{animation:blink 0.2s steps(2,start) 3;}
+    @keyframes blink{to{visibility:hidden;}}
+    .milk-btn {position: absolute; left: 1530px; top: 880px; height: 50px;    transition: transform 0.1s;}
+    .milk-btn:hover {transform: rotate(-12deg);}
+    .color { color: #f42d2d; }
+  .umma-hover {transition: all 0.3s ease;}
+
+  .umma-hover:hover {
+    filter: drop-shadow(0 0 20px rgba(251, 255, 254, 1));}
+
+
+</style>
+<body>
+  <section style="margin: 0;">
+    <p class="en-font color" style="font-size: 3.5rem; margin: 0;padding-left: 30px;">Story of Milk </p>
+  </section>
+  <section>
+    <img src="labelmoo.png" class="umma-hover" style="height: 390px; padding top:50px; padding-left:30px;">
+  </section>
+  <section>
+    <a href="main.html" >
+       <img src="b1.png" alt="main" class="milk-btn">
+    </a>
+    </section>
+
+
+</body>
+</html>
