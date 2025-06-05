@@ -18,44 +18,218 @@
     .kr-font {font-family: "Gothic A1", sans-serif;
               font-weight: 400;
               font-style: normal;}
-  html, body {width: 100vw; height: 100vh; margin: 0; padding: 0;}
-    
-    html, body, *{cursor: url('image1.png') 16 16, auto ;}
-    html:active, body:active, *:active { cursor: url('2.png') 16 16, auto ;}
+    html, body {width: 100vw; height: 100vh; margin: 0; padding: 0;}
+    html, body, *{cursor: url('image1.png') 3 3, auto ;}
+    html:active, body:active, *:active { cursor: url('2.png') 3 3, auto ;}
     body {background-image: url('bg4.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;}
-    .blink-img:hover{animation:blink 0.2s steps(2,start) 3;}
-    @keyframes blink{to{visibility:hidden;}}
-    .milk-btn {position: absolute;  position: absolute;
-  left: 85vw;  
-  top: 90vh;   
-  height: 50px;
-  transition: transform 0.1s; height: 50px;    transition: transform 0.1s;}
-    .milk-btn:hover {
-      transform: rotate(-12deg);}
-    .color { color: #f42d2d; }
-  .umma-hover {transition: all 0.3s ease;}
+    .wrap {width: 1000px; height: 600px; margin: 0; }
 
-  .umma-hover:hover {
-    filter: drop-shadow(0 0 20px rgba(251, 255, 254, 1));}
+    .blink-img:hover{animation:blink 0.2s steps(2,start) 3;}
+
+    @keyframes blink{to{visibility:hidden;}}
+    .milk-btn {
+    position: absolute;
+    left: 89vw;
+    top: 83vh;
+    height: 120px;
+    transition: transform 0.1s;}
+
+    .milk-btn:hover {
+      transform: rotate(-12deg);
+    }
+    .color { color: #f42d2d; }
+  
+
+    @keyframes pulse-glow {0% {transform: scale(1);
+                  filter: drop-shadow(0 0 5px #D7FFFE);}
+                50% {transform: scale(1.1);
+                  filter: drop-shadow(0 0 15px #D7FFFE) drop-shadow(0 0 25px #D7FFFE);}
+                100% {transform: scale(1);
+                    filter: drop-shadow(0 0 5px #D7FFFE);}}
+
+    .umma-hover {transition: all 0.3s ease;}
+    .umma-hover:hover {animation: pulse-glow 1.2s infinite ease-in-out;}
+    .shake-tilt-hover:hover {
+      animation: tilt-shake 0.12s linear infinite;
+       filter: drop-shadow(0 0 4px #A4FFFD) drop-shadow(0 0 10px #A4FFFD);
+      transform: scale(1.12);}
+    @keyframes tilt-shake {
+      0% { transform: rotate(-8deg);}
+      50% { transform: rotate(8deg);}
+      100% { transform: rotate(-8deg);}
+    }
+        
+    .popup-img {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+      z-index: 10;
+      background: white;
+      border-radius: 10px;
+      box-shadow:  2px 2px 12px rgba(170, 255, 0, 1);
+      }
+
+    .popup-img.active {
+      display: block;
+    }
+
+    .popup-content {
+      width: 200px;
+      display: block;}
+
+    .close-btn {
+      position: absolute;
+      top: 2px;
+      right: 4px;
+      background: transparent; 
+      color: white;               
+      border: none;              
+      font-size: 16px;             
+      width: 24px;
+      height: 24px; 
+      padding: 0;
+      
+    }
 
 
 </style>
+
+
 <body>
-  <section style="margin: 0;">
-    <p class="en-font color" style="font-size: 3.5rem; margin: 0;padding-left: 30px;">Story of Milk </p>
+ <section style="margin: 0;">
+    <p class="en-font color" style="font-size: 3.6rem; margin: 0; padding-top: 33px;
+    padding-left: 60px;">Story of Milk </p>
   </section>
-  <section>
-    <img src="labelmoo.png" class="umma-hover" style="height: 390px; padding top:50px; padding-left:30px;">
-  </section>
+  <section style="flex:;" >
+    <img src="labelmoo.png" class="umma-hover" style="margin-top: 50px; margin-left: 40px; height: 350px;  padding-left:60px;">
+    </section>
+ 
+
+
+<section>
+  <div class="wrap">
+  <p class="en-font color" style="font-size:2.6rem; position: absolute; top: 160px; left: 720px;">Click Here! ↓↓↓
+  </p>
+
+    <img src="Frame1.png" class="popup-trigger shake-tilt-hover " data-target="popup1" style="width: 100px; position: absolute; top: 270px; left: 750px;"/>
+    <div class="popup-img draggable" id="popup1"style="z-index: 100;     z-index: 112; left: 38px; top: 393px; transform: none;">
+      <img src="pop4.png" class="popup-content" style="width: 550px;" />
+      <button class="close-btn">✖</button>
+    </div>
+
+    <img src="Frame4.png" class="popup-trigger shake-tilt-hover" data-target="popup2" style="width: 100px; position: absolute; top: 500px; left: 750px;"/>
+    <div class="popup-img draggable" id="popup2"style="z-index: 100;     left: 231px;top: 516px; transform: none;">
+      <img src="pop2.png" class="popup-content" style="width: 550px;" />
+      <button class="close-btn">✖</button>
+    </div>
+    <img src="Frame5.png" class="popup-trigger shake-tilt-hover" data-target="popup3" style="width: 100px; position: absolute; top: 270px; left: 1430px;"/>
+    <div class="popup-img draggable" id="popup3"style="z-index: 100; left: 1020px; top: 424px; transform: none;">
+      <img src="pop5.png" class="popup-content" style="width: 550px;" />
+      <button class="close-btn">✖</button>
+    </div>
+    <img src="Frame6.png" class="popup-trigger shake-tilt-hover" data-target="popup4" style="width: 100px; position: absolute; top: 400px; left: 1250px;"/>
+    <div class="popup-img draggable" id="popup4"style="z-index: 100; left: 810px; top: 237px; transform: none;">
+      <img src="pop5.png" class="popup-content" style="width: 550px;" />
+      <button class="close-btn">✖</button>
+    </div>
+    <img src="Frame7.png" class="popup-trigger shake-tilt-hover" data-target="popup5" style="width: 100px; position: absolute; top: 500px; left: 1480px;"/>
+    <div class="popup-img draggable" id="popup5"style="z-index: 100; left: 1167px;top: 10px; transform: none;">
+      <img src="pop7.png" class="popup-content" style="width: 550px;" />
+      <button class="close-btn">✖</button>
+    </div>
+    <img src="Frame8.png" class="popup-trigger shake-tilt-hover" data-target="popup6" style="width: 100px; position: absolute; top: 450px; left: 990px;"/>
+    <div class="popup-img draggable" id="popup6"style="z-index: 100;     left: 693px; top: 650px; transform: none;">
+      <img src="pop8.png" class="popup-content" style="width: 550px;" />
+      <button class="close-btn">✖</button>
+    </div>
+    <div class="wrap" style="position: absolute; top: 600px; left: 320px; font-size: 1.5rem;">
+      <p class="color">우리가 모르고 있었던 <br> 
+      우유 이야기</p>
+      <p class="color">몰랐던 우유에 대해 알아보는 시간을 가져보세요!!</p>
+    </div>
+
+</section>
+
+
+
   <section>
     <a href="main.html" >
        <img src="b1.png" alt="main" class="milk-btn">
     </a>
     </section>
 
+<script>
+let highestZ = 100;
 
+document.querySelectorAll('.popup-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const targetId = trigger.getAttribute('data-target');
+    const popup = document.getElementById(targetId);
+    popup.classList.add('active');
+    highestZ++;
+    popup.style.zIndex = highestZ;
+  });
+});
+
+document.querySelectorAll('.close-btn').forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.target.closest('.popup-img').classList.remove('active');
+  });
+});
+
+// 더 자연스러운 드래그
+const makeDraggable = (element) => {
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  // 마우스 다운(꾹 눌렀을때)
+  element.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return; // 좌클릭만 허용
+    isDragging = true;
+    // 드래그시 커서 변경
+    document.body.style.userSelect = "none";
+    element.style.cursor = 'move';
+    // 최상단으로
+    highestZ++;
+    element.style.zIndex = highestZ;
+    // offset 계산 (클릭 좌표 - 팝업의 좌상단)
+    const rect = element.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+    // 애니메이션 부드럽게
+    element.style.transition = 'none';
+  });
+
+  // 마우스 이동
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    // 팝업 이동좌표 계산
+    element.style.left = `${e.clientX - offsetX}px`;
+    element.style.top = `${e.clientY - offsetY}px`;
+  });
+
+  // 마우스 업(떼면 해제)
+  window.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      document.body.style.userSelect = "";
+      element.style.cursor = 'default';
+      // 드래그종료 후 다시 애니 가능하도록 리셋
+      setTimeout(()=>{ element.style.transition = ''; }, 10);
+    }
+  });
+};
+
+// 모든 팝업에 드래그 기능 적용
+document.querySelectorAll('.draggable').forEach(el => {
+  makeDraggable(el);
+});
+</script>
 </body>
 </html>
